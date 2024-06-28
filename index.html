@@ -1,8 +1,321 @@
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-    <meta http-equiv="refresh" content="0;url=https://www.cs.mcgill.ca/~mschie3/" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Maximilian Schiedermeier's personal website">
+    <meta name="keywords"
+          content="Maximilian Schiedermeier, Schiedermeier Maximilian, mschiedermeier, schiedermeierm">
+    <meta name="author" content="Maximilian Schiedermeier">
+    <title>Maximilian Schiedermeier</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/custom-style.css" rel="stylesheet">
+    <link href="https://www.cs.mcgill.ca/~mschie3/" rel="canonical">
+
+    <!-- support for native iOS app-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport"
+          content="target-densitydpi=device-dpi, width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        .nooo {
+            opacity: 0.035;
+            transition: 0.5s;
+        }
+
+        .nooo:hover {
+            opacity: 0.65;
+            transition: 0.5s;
+        }
+    </style>
 </head>
-<body>
-Click <a href=https://www.cs.mcgill.ca/~mschie3/>here</a> if redirect does not work.
+
+<body data-spy="scroll" data-target="#topNavbar" onload="setyear()">
+<script>
+    function setyear() {
+        let date = new Date();
+        document.getElementById('yearfield').innerText = date.getFullYear();
+    }
+</script>
+<!-- source: http://www.onlywebpro.com/tutorials/mobile-content/optimizing-full-screen-mobile-web-app-for-ios -->
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html">Maximilian Schiedermeier</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavbar"
+                aria-controls="topNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="topNavbar">
+            <ul class="navbar-nav mr-auto nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#Home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Publications">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Lectures">Lectures</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Opensource">Open Source</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Trivia">Trivia</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main role="main" class="container">
+
+    <div class="screen" id="Home">
+        <div class="row">
+            <div class="col-xl-auto col-lg-4 col-sm-5 col-5">
+                <img src="assets/img/max-compr.jpg" alt="Max' portrait" class="img-fluid rounded" id="headshot"/>
+            </div>
+            <div class="col-xl-auto col-lg-8 col-sm-7">
+                <h3>Maximilian Schiedermeier</h3>
+                <p>
+                    Professor for Software Engineering at <a href="https://info.uqam.ca/professeurs/#S">UQÀM, Canada</a>.
+                </p>
+                <address>
+                    <p>
+                        Pavillon PK-4440<br/>
+                        201, Avenue du Président-Kennedy<br/>
+                        Montréal, QC, H2X 3Y7<br/>
+                        Canada
+                    </p>
+                    <ul>
+                        <li>Email: <a href="mailto:schiedermeier.maximilian@uqam.ca?body=Hello%20Max%2C%20%0A....%0A%0ABest%2C%0A....%0A%0A%2F%22%5C%0A%5C%20%2F%20%20ASCII%20Ribbon%20Campaign%0A%20X%20%20%20%20against%20HTML%20e-mail%0A%2F%20%5C">schiedermeier.maximilian@uqam.ca</a> <a
+                                href="https://keys.openpgp.org/search?q=schiedermeier.maximilian@uqam.ca">[PGP
+                            key]</a></span>
+                        </li>
+                        <li><img src="assets/img/github-icon.png" alt="GitHub Icon" class="text-icon"/> GitHub: <a
+                                href="https://github.com/m5c">m5c</a></li>
+                        <li><img src="assets/img/dblp-icon.png" alt="DBLP Icon" class="text-icon"> DBLP: <a
+                                href="https://dblp.org/pid/249/2314.html">Maximilian Schiedermeier</a></li>
+                        <li><img src="assets/img/scholar-icon.png" alt="Scholar Icon" class="text-icon"> Google Scholar:
+                            <a href="https://scholar.google.com/scholar?q=maximilian+schiedermeier+canada">Maximilian
+                                Schiedermeier</a></li>
+                    </ul>
+                </address>
+            </div>
+            <div class="col">
+                <p/>
+                <h5>Biography</h5>
+                <p>
+                    Maximilian Schiedermeier is professor in computer science at UQAM, Canada. His research
+                    focuses on development and empirical assessment of tools for modern software engineering,
+                    notably in the context of Cloud Development, Build Systems CI/CD, and Software Security.
+                </p>
+                <p>
+                    Maximilian received a Ph.D. in Computer Science from "<i>McGill University</i>" in 2024.
+                    His PhD thesis investigated how Domain-Specific Languages can be integrated into the software
+                    development process to support complex or error-prone tasks.
+                </p>
+                <p>
+                    Maximilian received a M.Sc. in Computer Science from the "<i>Universität Passau</i>", and an
+                    Engineering Diploma from the "<i>Institut national des sciences appliquées de Lyon</i>", 2017.
+                    <br>His master thesis explored architectural patterns for secure multi-party computations.
+                </p>
+                <!--        <p>Maximilian received a B.Sc. in Internet Computing and a B.Sc in Computer Science from the "<i>Universität Passau</i>" in 2015.-->
+                <!--          <br>His bachelor thesis evaluated the architectural intrusiveness of various web-frameworks.-->
+                <!--        </p>-->
+                <h5>Research Keywords</h5>
+                <ul class="inline">
+                    <li>Software Engineering</li>
+                    <li>Empirical Research</li>
+                    <li>CI/CD</li>
+                    <li>Build Systems</li>
+                    <li>RESTful Services</li>
+                    <li>OAuth2 & API Security</li>
+                    <li>Security Protocols</li>
+                </ul>
+                <a href="https://web3isgoinggreat.com/">
+                    <img src="assets/img/web3.png" width="50px" class="nooo">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="screen" id="Publications">
+        <h2>Publications / Reports</h2>
+        <ul class="twolevels">
+            <li>
+                <strong>2024</strong>
+                <ul>
+                    <li><a href="blobs/PhD_Thesis.pdf">PhD Thesis: Concern-Specific Modelling Languages</a></li>
+                    <li><a href="https://www.computer.org/csdl/magazine/so/5555/01/10380193/1TpyHiDEO6k"> Polyglot
+                        Software Development: Wait, What? (IEEE Software 01/2024)</a></li>
+                </ul>
+            </li>
+            <li>
+            <li>
+                <strong>2023</strong>
+                <ul>
+                    <li><a href="blobs/THERA.mp4">The Horsemen of Empirical Research Apocalypse (CSER, Montreal
+                        2023)</a>, <a href="blobs/thera-poster.pdf">Poster</a></li>
+                </ul>
+            </li>
+            <li>
+            <li>
+                <strong>2022</strong>
+                <ul>
+                    <li><a href="blobs/src22.pdf">Pushing the Boundaries of Planned Reuse with Concern Specific
+                        Modelling Languages (Student Research Competition, Models 2022)</a>, <a
+                            href="blobs/src22-poster.pdf">Poster</a></li>
+                    <li><a href="https://hal.inria.fr/hal-03770004/file/ase22-132.pdf">Global Decision Making over Deep
+                        Variability (Automated Software Engineering, 2022)</a>
+                </ul>
+            </li>
+            <li>
+                <strong>2021</strong>
+                <ul>
+                    <li><a href="blobs/PhD-Proposal-Schiedermeier.pdf">PhD Proposal (Internal Report, McGill,
+                        2021)</a>
+                    <li><a href="blobs/FIDDLR.pdf">FIDDLR: Streamlining Reuse with Concern-Specific Modelling
+                        Languages (Software Language Engineering, Chicago, 2021)</a>, <a
+                            href="blobs/FIDDLR-1080p.mp4">Video presentation</a></li>
+                    <li><a href="blobs/MultiLang.pdf">Multi-Language Support in TouchCORE (Tool-Demo, Models
+                        2021)</a></li>
+                </ul>
+            </li>
+            <li>
+                <strong>2020</strong>
+                <ul>
+                    <li><a href="blobs/symposium.pdf">A Concern-Oriented Software Engineering Methodology for
+                        Micro-Service Architectures (Doctoral Symposium, Models 2020)</a>, <a
+                            href="blobs/models-presentation.mp4">Video presentation</a>, <a
+                            href="blobs/5-min-models-presentation.mp4">5 Minute video presentation</a>, <a
+                            href="https://www.youtube.com/watch?v=sPD3yaOtN2Q&t=4607s"> Discussion at MODELS 2020</a>
+                    </li>
+                    <li><a href="blobs/MSA-literature-review.pdf">Micro-Service Architectures, Literature Review
+                        (Internal Report, McGill, 2020)</a></li>
+                </ul>
+            </li>
+            <li>
+                <strong>2019</strong>
+                <ul>
+                    <li><a href="blobs/atrepipavo.pdf">A transparent referendum protocol with immutable
+                        proceedings and verifiable outcome for trustless networks (Complex Networks, Lisbon, 2019)</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="screen" id="Lectures">
+        <h2>Open Access Lectures and Material</h2>
+        <ul class="twolevels">
+            <li><strong>English</strong>
+                <ul>
+<!--                    <li>COMP 361: <a href=COMP361/git-tutorial-hb.mp4>An introduction to GIT / Weekly Reports</a></li>-->
+                    <li>Code Samples: <a href=https://m5c.github.io/MavenSnippetLibrary/>Maven Snippet Library</a></li>
+                    <li>Video Lecture: <a href=blobs/Repository-Best-Practices.mp4>Repository and Build Best Practices</a>
+                    </li>
+<!--                    <li>COMP 361: <a href=COMP361/Exploring-the-Lobby-Service.mp4>Exploring the Lobby Service</a></li>-->
+<!--                    <li>COMP 361: <a href=COMP361/REST-hb.mp4>An introduction to REST / The Lobby Service API</a></li>-->
+                    <li>Video Lecture: <a href=blobs/Port-Forwarding-1080p.mp4>Hands-On Port Forwarding</a></li>
+                    <li>Tutorial: <a href=restify/>Turning Java code into a RESTful Service: Documentation,
+                        Video Tutorial and Exercises</a></li>
+                    <li>Tutorial: <a href="https://github.com/m5c/EthereumGuide/blob/master/README.md">
+                        Smart Contract development with Ethereum/Java</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="screen" id="Opensource">
+        <h2>Open Source Software</h2>
+        <ul class="twolevels">
+            <li><strong>Github</strong>
+                <ul>
+                    <li><a href="https://m5c.github.io/RestifyReplicationPackage/">Restify Experiment Replication Package</a> - All software and data needed to replicate the RESTify experiment.<br>(Empirical measurement of DSL impact for migrating legacy code to REST) </a></li>
+                    <li><a href="https://github.com/m5c/AsyncRestLib/blob/master/README.md">ARL</a> - A
+                        compact library for asynchronous callbacks via Spring REST controllers.</a></li>
+<!--                    <li><a href="https://github.com/m5c/TouchCoreAutoDevSetup/blob/master/README.md">TouchCORE-->
+<!--                        Auto-Installer</a> - A MacOS script to set up your IDE for <a-->
+<!--                            href="https://bitbucket.org/mcgillram/touchram/wiki/Home">TouchCORE</a> and sort-out all-->
+<!--                        dependencies and configurations for you.</a></li>-->
+                    <li>
+                        <a href="https://github.com/m5c/BookStoreInternals/blob/master/README.md">BookStore</a>
+                        - A reference base application for software conversion studies.
+                    </li>
+                    <li><a href="https://github.com/m5c/LobbyService/blob/master/README.md">Lobby
+                        Service</a> - A reusable REST-Service for generic lobby and authentication functionality in
+                        Micro-Service board-game implementations.
+                    </li>
+                    <li><a href="https://github.com/m5c/Teils/blob/master/README.md">TEILS</a> - A 3D
+                        puzzle game for Android.
+                    </li>
+                    <li><a href="https://github.com/m5c/AcquireBanker/blob/master/README.md">Acquire
+                        Banker</a> - A banking assistant for the stock simulation board game "Acquire".
+                    </li>
+                    <li><a href="https://github.com/m5c/OpenMind/blob/master/README.md">OpenMind</a> - An
+                        implementation of the code breaking game "Mastermind".
+                    </li>
+                    <li><a href="https://github.com/m5c/VisuCrypt/">VisuCrypt</a> - An
+                        open source implementation of Sharmir's Visual Cryptography.
+                    </li>
+                    <li><a href="https://github.com/m5c/AutomatedCatFeedingDevice/">A.C.F.D.</a> - Blueprints and
+                        software for my Automated Cat Feeding Device (MARK I).</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="screen" id="Trivia">
+        <h2>Trivia</h2>
+        <ul class="twolevels">
+            <li><strong>Podcast Music</strong>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=ZGmhKIYcyfU">Intro-intro music for the Aufwachen
+                        Podcast, Episode 392</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=7MuEmkmmVVs">Intro-intro music for the Aufwachen
+                        Podcast, Episode 434</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=CCk5iQl4iYM">Intro-intro music for the Aufwachen
+                        Podcast, Episode 449</a></li>
+                    <li><a href="https://shows.acast.com/podcast-ufo/episodes/ufo176t-rex">Intro music for the Podcast-UFO, Episode 176</a></li>
+                    <li><a href="https://shows.acast.com/podcast-ufo/episodes/ufo182enisratdul">Intro music for the Podcast-UFO, Episode 182</a></li>
+                    <li><a href="https://shows.acast.com/podcast-ufo/episodes/ufo258flederer">Intro music for the Podcast-UFO, Episode
+                        258</a></li>
+                </ul>
+            </li>
+            <br/>
+            <li><strong>PPH Report</strong>
+                <ul>
+                    <li><a href="blobs/pph-rapport.pdf">Composition of a baroque fugue on the Tomb Raider theme.
+                        (French)</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</main>
+
+<footer class="text-muted text-center">
+    <span class="line">Special thanks for the template to <a
+            href="https://www.cs.mcgill.ca/~mnassif/">Mathieu Nassif</a>.</span>
+    <span class="line">
+	    <p style="display:inline">©</p>
+	    <p style="display:inline" id="yearfield"></p>
+	    <p style="display:inline">Maximilian Schiedermeier</p>
+    </span>
+</footer>
+
+<script src="assets/js/jquery-3.5.1.slim.min.js"></script>
+<script src="assets/js/bootstrap.bundle.js"></script>
 </body>
+
 </html>
+
