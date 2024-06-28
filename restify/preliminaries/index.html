@@ -1,0 +1,655 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.cs.mcgill.ca/~mschie3/comp361/restify/preliminaries/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Preliminaries - COMP 361 RESTify Exercises</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="mcgill" data-md-color-primary="" data-md-color-accent="red">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#preliminaries" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="COMP 361 RESTify Exercises" class="md-header__button md-logo" aria-label="COMP 361 RESTify Exercises" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            COMP 361 RESTify Exercises
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Preliminaries
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="COMP 361 RESTify Exercises" class="md-nav__button md-logo" aria-label="COMP 361 RESTify Exercises" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    COMP 361 RESTify Exercises
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Preliminaries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Preliminaries
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+    <nav class="md-nav" aria-label="Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    Java
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    Maven
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellij" class="md-nav__link">
+    IntelliJ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    Applications
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    Source Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellij-import-test" class="md-nav__link">
+    IntelliJ Import Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../illustrations/" class="md-nav__link">
+        Task Illustration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task1/" class="md-nav__link">
+        Task 1 - Tic Tac Toe
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task2/" class="md-nav__link">
+        Task 2 - Book Store
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test/" class="md-nav__link">
+        Tests
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    Software
+  </a>
+  
+    <nav class="md-nav" aria-label="Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    Java
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    Maven
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellij" class="md-nav__link">
+    IntelliJ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    Applications
+  </a>
+  
+    <nav class="md-nav" aria-label="Applications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    Source Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellij-import-test" class="md-nav__link">
+    IntelliJ Import Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="preliminaries">Preliminaries</h1>
+<h2 id="software">Software</h2>
+<p>Let's first check that you have all required software installed on your machine.</p>
+<h3 id="java">Java</h3>
+<p>You will need Java, version <code>11.0.5</code> or newer will work.
+ * Verify your java version with <code>java -version</code>
+ * If the output is <strong>not 11.0.5 or newer</strong>, install it:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Mac OS</label><label for="__tabbed_1_2">Linux</label><label for="__tabbed_1_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Download the <a href="../../../1105/OpenJDK11U-jdk_x64_mac_hotspot_11.0.5_10.pkg">JDK 11.0.5 MacOS package</a>.</li>
+<li>Double click the downloaded <code>.pkg</code> file.</li>
+<li>Follow the install instructions.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Download the <a href="../../../1105/OpenJDK11U-jdk_x64_linux_hotspot_11.0.5_10.tar.gz">JDK 11.0.5 Linux package</a>.</li>
+<li>Extract the file: <code>tar xvf *.tar.gz</code></li>
+<li><a href="https://docs.oracle.com/cd/E19062-01/sun.mgmt.ctr36/819-5418/gaznb/index.html">Add the contained commands to your path</a>:<ul>
+<li>Set the JAVA_HOME and update your PATH in your <code>~/.bashrc</code> file:<ul>
+<li>Extend path: <code>PATH=$PATH:/wherever/you/extracted/it/jdk-.../bin/</code></li>
+<li>Set java home: <code>JAVA_HOME=/wherever/you/extracted/it/jdk-...</code></li>
+</ul>
+</li>
+<li>Open a new terminal or type: <code>source ~/.bashrc</code></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Download the JDK 11.0.5 <a href="../../../1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.msi">MSI</a> or <a href="../../../1105/OpenJDK11U-jdk_x64_windows_hotspot_11.0.5_10.zip">ZIP</a> installer.</li>
+<li>Double click the downloaded file.</li>
+<li>Follow the install instructions.</li>
+</ul>
+</div>
+</div>
+</div>
+<blockquote>
+<p><strong>After installation</strong>, verify that <strong>11.0.5 is now the default installed version</strong>.<br />
+Type again: <code>java -version</code>, check the output.</p>
+</blockquote>
+<h3 id="maven">Maven</h3>
+<p>You will need the java build tool <em>Maven</em>.</p>
+<ul>
+<li>Test if your system has the <code>mvn</code> command.</li>
+<li>If missing, install it:</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Mac OS</label><label for="__tabbed_2_2">Linux</label><label for="__tabbed_2_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Unless already installed, <a href="https://brew.sh/">get the <code>brew</code> package manager</a>.</li>
+<li>Install maven:<br />
+<code>brew install maven</code></li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Use the <code>apt</code> package manager to install maven:<br />
+<code>sudo apt install maven</code></li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Download the <a href="https://maven.apache.org/download.cgi">graphical install wizard</a>.</li>
+<li>Double click it and follow the instructions.</li>
+</ul>
+</div>
+</div>
+</div>
+<h3 id="intellij">IntelliJ</h3>
+<p>Any IDE can be used, but we strongly recommend IntelliJ. Also further instructions and guides on this page are exclusively for IntelliJ.</p>
+<ul>
+<li><a href="https://www.jetbrains.com/idea/download/">Download and install IntelliJ</a>.<ul>
+<li>The <em>community</em> version is sufficient.</li>
+<li>If desired you can also use the <em>ultimate</em> version (registration with mcgill email required).</li>
+</ul>
+</li>
+</ul>
+<h2 id="applications">Applications</h2>
+<p>This section describes how to obtain source code and prepared TouchCORE models for the study objects.</p>
+<h4 id="source-code">Source Code</h4>
+<p>For the upcoming two tasks you will need prepared source code to work on.  </p>
+<ul>
+<li>Prepare a dedicated folder for your tasks, e.g. on your Desktop.</li>
+<li>Clone these three repositories, but do not yet inspect their content:<ul>
+<li><a href="https://github.com/kartoffelquadrat/Zoo">The Zoo</a>:<br />
+<code>git clone https://github.com/kartoffelquadrat/Zoo.git</code></li>
+<li><a href="https://github.com/kartoffelquadrat/BookStoreInternals">The Book Store</a>:<br />
+<code>git clone https://github.com/kartoffelquadrat/BookStoreInternals.git</code></li>
+<li><a href="https://github.com/kartoffelquadrat/XoxInternals">Tic Tac Toe</a>:<br />
+<code>git clone https://github.com/kartoffelquadrat/XoxInternals.git</code></li>
+</ul>
+</li>
+<li>You should now have three new directories in your study folder:</li>
+<li>Finally, <strong>for each</strong> folder, verify you can build the code as is:<ul>
+<li>Open a terminal / command line in the project folder.</li>
+<li>Run: <code>mvn clean install</code></li>
+<li>Verify there are no error messages printed to screen.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>All code you are working with in this study is open source, and you are welcome to share and redistribute it, beyond the context of this study. However, whatever published should always reference and give credit to the original source and authors.</p>
+</blockquote>
+<h4 id="intellij-import-test">IntelliJ Import Test</h4>
+<p>Let's verify that you can open and run the test source code with IntelliJ:</p>
+<ul>
+<li>Start IntelliJ.</li>
+<li>Use the "<em>Open</em>" option to get to the selection dialogue:
+<img alt="open-1" src="../captures/intellij/open-1.png" /></li>
+<li>Select the cloned project root folder, then click the "<em>Open</em>" button:<br />
+<img alt="open-2" src="../captures/intellij/open-2.png" /></li>
+<li>Verify you can start the "Zoo". Open the <code>DesktopLauncher</code> class and click the green triangle, left of the code:<br />
+<img alt="legacylaunch" src="../captures/intellij/legacylaunch.png" /></li>
+<li>Verify there is sample zoo text output, no error messages.</li>
+<li>Close IntelliJ again.</li>
+</ul>
+<p>If everything worked as expected you may now proceed to your first task.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Welcome" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Welcome
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../illustrations/" class="md-footer__link md-footer__link--next" aria-label="Next: Task Illustration" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Task Illustration
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>
