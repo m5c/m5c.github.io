@@ -7,6 +7,7 @@
     <list default="true" id="73babf9b-f45a-47db-a68c-524d1d2e0950" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restify/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/restify/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +45,13 @@
       <recent name="$PROJECT_DIR$/blobs" />
     </key>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -65,6 +73,7 @@
       <workItem from="1725281231017" duration="574000" />
       <workItem from="1725281930656" duration="29000" />
       <workItem from="1728330402985" duration="61000" />
+      <workItem from="1791569500290" duration="2258000" />
     </task>
     <servers />
   </component>
